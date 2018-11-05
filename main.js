@@ -1,7 +1,7 @@
 $(updateView)
 
 function updateView() {
-    alert("Using jQuery!")
+    alert("Welcome, Nyaaa!")
 }
 
 /* Drop Down Function-Nav Bar */
