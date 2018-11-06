@@ -11,7 +11,7 @@ function updateRideCount(data) {
     $("h2#rideCount").html(numberOfRides)
 }
 
-/* Drop Down Function-Nav Bar */
+/* Drop Down Function-Nav Bar  -----**Source**:https://www.w3schools.com/css/css_dropdowns.asp" */
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
