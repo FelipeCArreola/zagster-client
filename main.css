@@ -132,6 +132,10 @@ body {
   display: block;
 }
 
+.dropdown-list {
+  list-style-type:circle;
+}
+
 /* Show the dropdown menu */
 .show {display:block;}
 
