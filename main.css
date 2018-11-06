@@ -9,6 +9,20 @@ a:hover {
   color: #fff;
 }
 
+/* Lists: Under "Drop-Down button: Portfolio"= "dropbtn" */
+ul {
+  margin-left: -3.7px;
+}
+
+li {
+  padding-left: 0px;
+  margin-left: -2.1px;
+}
+
+.dropdown-list {
+  list-style-type:circle;
+}
+
 /*
  * Base structure
  */
@@ -156,10 +170,6 @@ body {
   float: center;
   text-decoration: none;
   display: block;
-}
-
-.dropdown-list {
-  list-style-type:circle;
 }
 
 /* Show the dropdown menu */
