@@ -83,6 +83,13 @@ body {
     max-width: 65em;
   }
   
+/* Image Modifiers */
+.vis-img {
+  margin:0 auto;
+  width: 73%;
+  height: 73%;
+}
+
 
 /*
  * Cover
