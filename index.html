@@ -12,7 +12,7 @@
            Source: "https://www.chartjs.org/docs/latest/charts/bar.html"-->
 
             <!--DV JavaScript-->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+            
             <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
             <!--DV core CSS-->
@@ -72,7 +72,7 @@
           <br>
 
          <div>
-          <canvas id="myChart" width="500" height="500"></canvas>
+          <canvas id="myChart" width="490" height="490"></canvas>
           <script>
           
 var ctx = document.getElementById("myChart")
@@ -107,14 +107,40 @@ var myChart = new Chart(ctx, {
         }]
     },
     options: {
-        scales: {
+      
+      legend: {
+            labels: {
+                fontColor: 'white',
+                fontSize: 15.5
+            }
+        },
+
+      scales: {
+            xAxes: [{gridLines: {
+                      display: false ,
+                      color: 'rgba(255,255,255, 0.8)'
+                   },
+                    ticks: {
+                      fontColor: 'white',
+                      fontSize: 14
+                    }
+            }]  ,
+
             yAxes: [{
                 ticks: {
-                    beginAtZero:true
-                }
+                    beginAtZero:true,
+                    fontColor: 'white',
+                    fontSize: 14
+                },
+                gridLines: {
+                      display: false ,
+                      color: 'rgba(255,255,255, 0.8)'
+                },  
             }]
+
         }
     }
+  
 });
 
           </script>
