@@ -3,11 +3,13 @@
  */
 
 /* Links */
+
 a,
 a:focus,
 a:hover {
   color: #fff;
 }
+
 
 /* Lists: Under "Drop-Down button: Portfolio"= "dropbtn" */
 ul {
@@ -189,4 +191,9 @@ body {
  .mastfoot {
     color: rgba(255, 255, 255, .5);
   }
+ 
   
+/*
+ * Data Visualization Source: "https://www.chartjs.org/docs/latest/charts/bar.html"
+ */
+
