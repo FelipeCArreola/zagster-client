@@ -8,15 +8,26 @@
 
     <title>Zagster Bike Share in Bend</title>
 
+        <!--Data Visualization (DV)
+           Source: "https://www.chartjs.org/docs/latest/charts/bar.html"-->
+
+            <!--DV JavaScript-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+            <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+            <!--DV core CSS-->
+             
         <!--JavaScript -->
         <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+        
         <script src="main.js"></script>
 
         <!-- Bootstrap core CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+       
 
         <!-- Custom styles -->
         <link rel="stylesheet" type="text/css" href="main.css">
@@ -51,20 +62,65 @@
         </div>
       </header>
 
-      <section>
-        <p class="box-transp-zagster"> **Clickable images** </p>
-      <a href="https://i.imgur.com/9PVDauI.jpg?1" target="_blank"><img src="https://i.imgur.com/9PVDauI.jpg?1" class="vis-img"></a><br><br>
-      <a href="https://i.imgur.com/5bSY3I7.jpg?1" target="_blank"><img src="https://i.imgur.com/5bSY3I7.jpg?1" class="vis-img"></a><br><br>
-      <a href="https://i.imgur.com/l1D9dQ0.jpg?1" target="_blank"><img src="https://i.imgur.com/l1D9dQ0.jpg?1" class="vis-img"></a> 
-      </section>
+    
+  
+
 
       <section class="box-transp-zagster">
         <main role="main" class="inner cover">
           <h1 class="cover-heading">Zagster Bike Share in Bend</h1>
           <br>
-            <h2 id="rideCount">TODO</h2>
-                  <p class="lead"> Total rides          
-                  </p>
+
+         <div>
+          <canvas id="myChart" width="500" height="500"></canvas>
+          <script>
+          
+var ctx = document.getElementById("myChart")
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["G5", "Columbia/Simpson", "Drake Park", "Galveston", "GRC", "Old Mill", "OSU-Cascades", "Ten Barrel"],
+        datasets: [{
+            label: 'Total Count of Riders Per Station',
+            data: [2294, 1016, 2414, 400, 1625, 2813, 4018,  492],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(58,112,42,0.2)',
+                'rgba(76,212,40,0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(54, 162, 217, 1)',
+                'rgba(76,242,40,1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+
+          </script>
+          </div>
+
+        
         </main>
       </section>
            
