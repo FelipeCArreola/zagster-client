@@ -10,55 +10,50 @@ const OLD_TC = "/rides/count/old_mill"
 const OSU_TC = "/rides/count/osu_cascades"
 const TEN_TC = "/rides/count/ten_barrel"
 
-
 var ChartData = []
 
 
 $(updateView)
 
 function updateView() {
-  
-    $.getJSON(BASE_URL + G5_TC, updateChartData00)
-    $.getJSON(BASE_URL + COL_TC, updateChartData01)
-    $.getJSON(BASE_URL + DRAKE_TC, updateChartData02)
-    $.getJSON(BASE_URL + GALV_TC, updateChartData03)
-    $.getJSON(BASE_URL + GRC_TC, updateChartData04)
-    $.getJSON(BASE_URL + OLD_TC, updateChartData05)
-    $.getJSON(BASE_URL + OSU_TC, updateChartData06)
-    $.getJSON(BASE_URL + TEN_TC, updateChartData07)
+
+   $.when([
+        ($.getJSON(BASE_URL + G5_TC, updateChartData00), 
+            function updateChartData00(data) {
+            ChartData.push(data.count)
+            }),
+        ($.getJSON(BASE_URL + COL_TC, updateChartData01), 
+            function updateChartData01(data) {
+            ChartData.push(data.count)
+            }),
+        ($.getJSON(BASE_URL + DRAKE_TC, updateChartData02),
+            function updateChartData02(data) {
+            ChartData.push(data.count)
+            }),
+        ($.getJSON(BASE_URL + GALV_TC, updateChartData03),
+            function updateChartData03(data) {
+            ChartData.push(data.count)
+            }),
+        ($.getJSON(BASE_URL + GRC_TC, updateChartData04),
+            function updateChartData04(data) {
+            ChartData.push(data.count)
+            }),
+        ($.getJSON(BASE_URL + OLD_TC, updateChartData05),
+            function updateChartData05(data) {
+            ChartData.push(data.count)
+            }),
+        ($.getJSON(BASE_URL + OSU_TC, updateChartData06),
+            function updateChartData06(data) {
+            ChartData.push(data.count)
+            }),
+        ($.getJSON(BASE_URL + TEN_TC, updateChartData07),
+            function updateChartData07(data) {
+            ChartData.push(data.count)
+            })
+   ]).then(displayGraph)
+
 }
 
-function updateChartData00(data) {
-    ChartData.push(data.count)
-}
-
-function updateChartData01(data) {
-    ChartData.push(data.count)
-}
-
-function updateChartData02(data) {
-    ChartData.push(data.count)
-}
-
-function updateChartData03(data) {
-    ChartData.push(data.count)
-}
-
-function updateChartData04(data) {
-    ChartData.push(data.count)
-}
-
-function updateChartData05(data) {
-    ChartData.push(data.count)
-}
-
-function updateChartData06(data) {
-    ChartData.push(data.count)
-}
-
-function updateChartData07(data) {
-    ChartData.push(data.count)
-}
 
 /* Console log Strings */
 function updateChartData00(data) {
@@ -89,7 +84,7 @@ function updateChartData07(data) {
 /* Visualization JS- Source:"https://www.chartjs.org/docs/latest/charts/bar.html" */
 
 
-window.onload = function() {
+function displayGraph() {
 var ctx = document.getElementById("myChart").getContext('2d')
 var myChart = new Chart(ctx, {
     type: 'bar',
