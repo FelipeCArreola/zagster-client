@@ -17,24 +17,24 @@ $(updateView)
 
 function updateView() {
 
-   $.when([
-        ($.getJSON(BASE_URL + G5_TC, updateChartData00)), 
+   $.when(
+        $.getJSON(BASE_URL + G5_TC, updateChartData00), 
             
-        ($.getJSON(BASE_URL + COL_TC, updateChartData01)), 
+        $.getJSON(BASE_URL + COL_TC, updateChartData01), 
             
-        ($.getJSON(BASE_URL + DRAKE_TC, updateChartData02)),
+        $.getJSON(BASE_URL + DRAKE_TC, updateChartData02),
          
-        ($.getJSON(BASE_URL + GALV_TC, updateChartData03)),
+        $.getJSON(BASE_URL + GALV_TC, updateChartData03),
                     
-        ($.getJSON(BASE_URL + GRC_TC, updateChartData04)),
+        $.getJSON(BASE_URL + GRC_TC, updateChartData04),
     
-        ($.getJSON(BASE_URL + OLD_TC, updateChartData05)),
+        $.getJSON(BASE_URL + OLD_TC, updateChartData05),
                
-        ($.getJSON(BASE_URL + OSU_TC, updateChartData06)),
+        $.getJSON(BASE_URL + OSU_TC, updateChartData06),
            
-        ($.getJSON(BASE_URL + TEN_TC, updateChartData07))
+        $.getJSON(BASE_URL + TEN_TC, updateChartData07)
         
-   ]).then(displayGraph);
+   ).then(displayGraph)
 
 }
 
