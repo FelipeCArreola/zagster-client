@@ -85,6 +85,12 @@ body {
     max-width: 65em;
   }
   
+.chartContainer {
+  width: 65%;
+  height: 65%;
+  margin: 0 auto;
+}
+
 /* Image Modifiers */
 .vis-img {
   margin:0 auto;
