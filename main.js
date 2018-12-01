@@ -13,9 +13,36 @@ const TEN_TC = "/rides/count/ten_barrel"
 var ChartData = [];
 
 
+var ChartData00;
+var ChartData01;
+var ChartData02;
+var ChartData03;
+var ChartData04;
+var ChartData05;
+var ChartData06;
+var ChartData07;
+
 $(updateView)
 
 function updateView() {
+
+
+    /*
+    $.when($.getJSON(BASE_URL + G5_TC, updateChartData00)).then(
+        $.when($.getJSON(BASE_URL + COL_TC, updateChartData01)).then(
+            $.when($.getJSON(BASE_URL + DRAKE_TC, updateChartData02)).then(
+                $.when($.getJSON(BASE_URL + GALV_TC, updateChartData03)).then(
+                    $.when($.getJSON(BASE_URL + GRC_TC, updateChartData04)).then(
+                        $.when($.getJSON(BASE_URL + OLD_TC, updateChartData05)).then(
+                            $.when( $.getJSON(BASE_URL + OSU_TC, updateChartData06)).then(
+                                $.getJSON(BASE_URL + TEN_TC, updateChartData07)
+                            )
+                        )
+                    )
+                )
+            )
+        )
+    */
 
    $.when(
         $.getJSON(BASE_URL + G5_TC, updateChartData00), 
@@ -33,11 +60,53 @@ function updateView() {
         $.getJSON(BASE_URL + OSU_TC, updateChartData06),
            
         $.getJSON(BASE_URL + TEN_TC, updateChartData07)
-        
-   ).then(displayGraph)
+      
+   ).then(displayGraph);
 
 }
 
+
+function updateChartData00(data) {
+    console.log(data);
+    ChartData00 = (data.count)
+}
+
+function updateChartData01(data) {
+    console.log(data);
+    ChartData01 = (data.count)
+}
+
+function updateChartData02(data) {
+    console.log(data);
+    ChartData02 = (data.count)
+}
+
+function updateChartData03(data) {
+    console.log(data);
+    ChartData03 = (data.count)
+}
+
+function updateChartData04(data) {
+    console.log(data);
+    ChartData04 = (data.count)
+}
+
+function updateChartData05(data) {
+    console.log(data);
+    ChartData05 = (data.count)
+}
+
+function updateChartData06(data) {
+    console.log(data);
+    ChartData06 = (data.count)
+}
+
+function updateChartData07(data) {
+    console.log(data);
+    ChartData07 = (data.count)
+}
+
+/*
 function updateChartData00(data) {
     console.log(data);
 ChartData.push(data.count)
@@ -77,7 +146,7 @@ function updateChartData07(data) {
     console.log(data);
 ChartData.push(data.count)
 }
-
+*/
 
 /*
  Console log Strings 
@@ -121,7 +190,7 @@ var myChart = new Chart(ctx, {
         labels: ["G5", "Columbia/Simpson", "Drake Park", "Galveston", "GRC", "Old Mill", "OSU-Cascades", "Ten Barrel"],
         datasets: [{
             label: 'Total Count of Rides Per Station',
-            data: ChartData,
+            data: [ChartData00, ChartData01, ChartData02, ChartData03, ChartData04, ChartData05, ChartData06, ChartData07], 
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
